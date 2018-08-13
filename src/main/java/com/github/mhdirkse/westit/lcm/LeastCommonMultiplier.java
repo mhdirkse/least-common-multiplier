@@ -55,10 +55,17 @@ import com.google.api.server.spi.config.ApiMethod;
 public class LeastCommonMultiplier {
   @ApiMethod(name = "getLeastCommonMultiplier", path = "getLeastCommonMultiplier")
   public Result getLeastCommonMultiplier(final User user, @Named("maxDivisor") int maxDivisor) {
-	  Factors factors = new Factors(maxDivisor);
+	  if(maxDivisor <= 1) {
+		  return new Result("Illegal max divisor: " + Integer.valueOf(maxDivisor).toString());
+	  }
+	  return getLcmUnchecked(maxDivisor);
+  }
+
+private Result getLcmUnchecked(int maxDivisor) {
+	Factors factors = new Factors(maxDivisor);
 	  factors.processAll();
 	  BigInteger result = factors.factorsAsBigInteger()
 			  .stream().reduce(BigInteger.ONE, (a, b) -> a.multiply(b));
 	  return new Result(result.toString());
-  }
+}
 }
