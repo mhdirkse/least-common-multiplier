@@ -1,7 +1,7 @@
 # Least common multiplier API
 
 This project calculates the least common multiplier of numbers 1 ... maxDivisor.
-For example, the least common multiplier of 1, 2, 3 and 4 is 12, because 2\*6 = 12 and 3\*4 = 12. There can be no smaller number because 3 and 4 have no prime factors in common.
+For example, the least common multiplier of 1, 2, 3 and 4 is 12, because 2\*6 = 12 and 3\*4 = 12. There can be no smaller number because 3 and 4 have no prime factors in common. I built this software for my job application at West IT in Delft. Wouter Eekhout, thanks for giving me this assignment and reviewing it.
 
 I found the following answers:
 * 1 ... 25 has least common multiplier 26771144400.
